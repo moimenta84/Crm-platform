@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 import { LayoutService } from './core/layout.service';
 import { LayoutInitService } from './core/layout-init.service';
 import { ILayout, LayoutType } from './core/configs/config';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-layout',
@@ -74,10 +75,12 @@ export class LayoutComponent implements OnInit, OnDestroy {
     private initService: LayoutInitService,
     private layout: LayoutService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private toastr: ToastrService
   ) {
     // define layout type and load layout
     this.router.events.subscribe((event) => {
+      this.toastr.success('Hello world!', 'Toastr fun!');
       if (event instanceof NavigationEnd) {
         const currentLayoutType = this.layout.currentLayoutTypeSubject.value;
 
