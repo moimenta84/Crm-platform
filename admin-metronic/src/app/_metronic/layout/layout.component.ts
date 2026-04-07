@@ -80,7 +80,6 @@ export class LayoutComponent implements OnInit, OnDestroy {
   ) {
     // define layout type and load layout
     this.router.events.subscribe((event) => {
-      this.toastr.success('Hello world!', 'Toastr fun!');
       if (event instanceof NavigationEnd) {
         const currentLayoutType = this.layout.currentLayoutTypeSubject.value;
 

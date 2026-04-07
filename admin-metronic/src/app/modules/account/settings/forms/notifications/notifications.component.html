@@ -8,7 +8,7 @@
     aria-controls="kt_account_notifications"
   >
     <div class="card-title m-0">
-      <h3 class="fw-bolder m-0">Notifications</h3>
+      <h3 class="fw-bolder m-0">Notificaciones</h3>
     </div>
   </div>
   <div id="kt_account_notifications" class="collapse show">
@@ -20,7 +20,7 @@
           >
             <tbody class="fs-6 fw-bold">
               <tr>
-                <td class="min-w-250px fs-4 fw-bolder">Notifications</td>
+                <td class="min-w-250px fs-4 fw-bolder">Notificaciones</td>
                 <td class="w-125px">
                   <div class="form-check form-check-solid">
                     <input
@@ -32,7 +32,7 @@
                     /><label
                       class="form-check-label ps-2"
                       for="kt_settings_notification_email"
-                      >Email</label
+                      >Correo</label
                     >
                   </div>
                 </td>
@@ -47,13 +47,13 @@
                     /><label
                       class="form-check-label ps-2"
                       for="kt_settings_notification_phone"
-                      >Phone</label
+                      >Teléfono</label
                     >
                   </div>
                 </td>
               </tr>
               <tr>
-                <td>Billing Updates</td>
+                <td>Actualizaciones de facturación</td>
                 <td>
                   <div class="form-check form-check-solid">
                     <input
@@ -84,7 +84,7 @@
                 </td>
               </tr>
               <tr>
-                <td>New Team Members</td>
+                <td>Nuevos miembros del equipo</td>
                 <td>
                   <div class="form-check form-check-solid">
                     <input
@@ -108,7 +108,7 @@
                 </td>
               </tr>
               <tr>
-                <td>Completed Projects</td>
+                <td>Proyectos completados</td>
                 <td>
                   <div class="form-check form-check-solid">
                     <input
@@ -138,7 +138,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="border-bottom-0">Newsletters</td>
+                <td class="border-bottom-0">Boletines</td>
                 <td class="border-bottom-0">
                   <div class="form-check form-check-solid">
                     <input
@@ -172,12 +172,12 @@
       </div>
       <div class="card-footer d-flex justify-content-end py-6 px-9">
         <button class="btn btn-light btn-active-light-primary me-2">
-          Discard</button
+          Cancelar</button
         ><button type="button" class="btn btn-primary" (click)="saveSettings()">
-          <ng-container *ngIf="!isLoading">Save Changes</ng-container>
+          <ng-container *ngIf="!isLoading">Guardar cambios</ng-container>
           <ng-container *ngIf="isLoading">
             <span class="indicator-progress" [style.display]="'block'">
-              Please wait...{{ " " }}
+              Por favor espere...{{ " " }}
               <span
                 class="spinner-border spinner-border-sm align-middle ms-2"
               ></span>

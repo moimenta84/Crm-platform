@@ -26,7 +26,7 @@
                             </div>
                             <div class="d-flex align-items-center py-2" *ngIf="i === 5 && role.permissions?.length && role.permissions.length > 5">
                                 <span class="bullet bg-primary me-3"></span>
-                                <em>and {{ role.permissions.length - 5 }} more...</em>
+                                <em>y {{ role.permissions.length - 5 }} más...</em>
                             </div>
                         </ng-container>
                     </ng-container>
@@ -36,7 +36,7 @@
             <!--end::Card body-->
             <!--begin::Card footer-->
             <div class="card-footer pt-0">
-                <button type="button" class="btn btn-light btn-active-primary" data-role-id="developer" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">Edit Role</button>
+                <button type="button" class="btn btn-light btn-active-primary" data-role-id="developer" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">Editar rol</button>
             </div>
             <!--end::Card footer-->
         </div>
@@ -51,7 +51,7 @@
             <div class="card-header pt-5">
                 <!--begin::Card title-->
                 <div class="card-title">
-                    <h2 class="d-flex align-items-center">Users Assigned
+                    <h2 class="d-flex align-items-center">Usuarios asignados
                         <ng-container *ngIf="role$ | async as role">
                             <span class="text-gray-600 fs-6 ms-1">({{ role.users.length }})</span>
                         </ng-container>

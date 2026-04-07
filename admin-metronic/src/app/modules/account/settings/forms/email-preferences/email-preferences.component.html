@@ -8,7 +8,7 @@
     aria-controls="kt_account_email_preferences"
   >
     <div class="card-title m-0">
-      <h3 class="fw-bolder m-0">Email Preferences</h3>
+      <h3 class="fw-bolder m-0">Preferencias de correo electrónico</h3>
     </div>
   </div>
   <div id="kt_account_email_preferences" class="collapse show">
@@ -24,9 +24,9 @@
             type="checkbox"
             name="email-preferences[]"
           /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Successful Payments</span
+            ><span class="fw-bolder fs-5 mb-0">Pagos exitosos</span
             ><span class="text-muted fs-6"
-              >Receive a notification for every successful payment.</span
+              >Recibir una notificación por cada pago exitoso.</span
             ></span
           ></label
         >
@@ -42,9 +42,9 @@
             name="email-preferences[]"
             checked=""
           /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Payouts</span
+            ><span class="fw-bolder fs-5 mb-0">Cobros</span
             ><span class="text-muted fs-6"
-              >Receive a notification for every initiated payout.</span
+              >Recibir una notificación por cada cobro iniciado.</span
             ></span
           ></label
         >
@@ -59,47 +59,9 @@
             type="checkbox"
             name="email-preferences[]"
           /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Fee Collection</span
+            ><span class="fw-bolder fs-5 mb-0">Cobro de comisiones</span
             ><span class="text-muted fs-6"
-              >Receive a notification each time you collect a fee from
-              sales</span
-            ></span
-          ></label
-        >
-        <div class="separator separator-dashed my-6"></div>
-        <label
-          class="
-            form-check form-check-custom form-check-solid
-            align-items-start
-          "
-          ><input
-            class="form-check-input me-3"
-            type="checkbox"
-            name="email-preferences[]"
-            checked=""
-          /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Customer Payment Dispute</span
-            ><span class="text-muted fs-6"
-              >Receive a notification if a payment is disputed by a customer and
-              for dispute purposes.</span
-            ></span
-          ></label
-        >
-        <div class="separator separator-dashed my-6"></div>
-        <label
-          class="
-            form-check form-check-custom form-check-solid
-            align-items-start
-          "
-          ><input
-            class="form-check-input me-3"
-            type="checkbox"
-            name="email-preferences[]"
-          /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Refund Alerts</span
-            ><span class="text-muted fs-6"
-              >Receive a notification if a payment is stated as risk by the
-              Finance Department.</span
+              >Recibir una notificación cada vez que cobres una comisión de ventas</span
             ></span
           ></label
         >
@@ -115,10 +77,10 @@
             name="email-preferences[]"
             checked=""
           /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Invoice Payments</span
+            ><span class="fw-bolder fs-5 mb-0">Disputa de pago del cliente</span
             ><span class="text-muted fs-6"
-              >Receive a notification if a customer sends an incorrect amount to
-              pay their invoice.</span
+              >Recibir una notificación si un pago es disputado por un cliente y
+              para fines de disputa.</span
             ></span
           ></label
         >
@@ -133,23 +95,59 @@
             type="checkbox"
             name="email-preferences[]"
           /><span class="form-check-label d-flex flex-column align-items-start"
-            ><span class="fw-bolder fs-5 mb-0">Webhook API Endpoints</span
+            ><span class="fw-bolder fs-5 mb-0">Alertas de reembolso</span
             ><span class="text-muted fs-6"
-              >Receive notifications for consistently failing webhook API
-              endpoints.</span
+              >Recibir una notificación si un pago es marcado como riesgo por el
+              Departamento de Finanzas.</span
+            ></span
+          ></label
+        >
+        <div class="separator separator-dashed my-6"></div>
+        <label
+          class="
+            form-check form-check-custom form-check-solid
+            align-items-start
+          "
+          ><input
+            class="form-check-input me-3"
+            type="checkbox"
+            name="email-preferences[]"
+            checked=""
+          /><span class="form-check-label d-flex flex-column align-items-start"
+            ><span class="fw-bolder fs-5 mb-0">Pagos de facturas</span
+            ><span class="text-muted fs-6"
+              >Recibir una notificación si un cliente envía un monto incorrecto para
+              pagar su factura.</span
+            ></span
+          ></label
+        >
+        <div class="separator separator-dashed my-6"></div>
+        <label
+          class="
+            form-check form-check-custom form-check-solid
+            align-items-start
+          "
+          ><input
+            class="form-check-input me-3"
+            type="checkbox"
+            name="email-preferences[]"
+          /><span class="form-check-label d-flex flex-column align-items-start"
+            ><span class="fw-bolder fs-5 mb-0">Endpoints de la API webhook</span
+            ><span class="text-muted fs-6"
+              >Recibir notificaciones por endpoints de la API webhook que fallen constantemente.</span
             ></span
           ></label
         >
       </div>
       <div class="card-footer d-flex justify-content-end py-6 px-9">
         <button class="btn btn-light btn-active-light-primary me-2">
-          Discard
+          Cancelar
         </button>
         <button type="button" class="btn btn-primary" (click)="saveSettings()">
-          <ng-container *ngIf="!isLoading">Save Changes</ng-container>
+          <ng-container *ngIf="!isLoading">Guardar cambios</ng-container>
           <ng-container *ngIf="isLoading">
             <span class="indicator-progress" [style.display]="'block'">
-              Please wait...{{ " " }}
+              Por favor espere...{{ " " }}
               <span
                 class="spinner-border spinner-border-sm align-middle ms-2"
               ></span>

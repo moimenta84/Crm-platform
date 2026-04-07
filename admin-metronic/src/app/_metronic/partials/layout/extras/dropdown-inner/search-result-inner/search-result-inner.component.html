@@ -8,7 +8,7 @@
     <!--end::Icon-->
 
     <!--begin::Input-->
-    <input type="text" class="form-control form-control-flush ps-10" name="search" value="" placeholder="Search..." data-kt-search-element="input" [ngModel]="keyword" (ngModelChange)="search($event)"/>
+    <input type="text" class="form-control form-control-flush ps-10" name="search" value="" placeholder="Buscar..." data-kt-search-element="input" [ngModel]="keyword" (ngModelChange)="search($event)"/>
     <!--end::Input-->
 
     <!--begin::Spinner-->
@@ -26,13 +26,13 @@
     <!--begin::Toolbar-->
     <div class="position-absolute top-50 end-0 translate-middle-y" data-kt-search-element="toolbar" [ngClass]="searching || keyword.length > 0 ? 'd-none' : ''">
       <!--begin::Preferences toggle-->
-      <div data-kt-search-element="preferences-show" class="btn btn-icon w-20px btn-sm btn-active-color-primary me-1" data-bs-toggle="tooltip" title="Show search preferences">
+      <div data-kt-search-element="preferences-show" class="btn btn-icon w-20px btn-sm btn-active-color-primary me-1" data-bs-toggle="tooltip" title="Mostrar preferencias de búsqueda">
           <app-keenicon name="setting-2" class="fs-1"></app-keenicon>
       </div>
       <!--end::Preferences toggle-->
 
       <!--begin::Advanced search toggle-->
-      <div data-kt-search-element="advanced-options-form-show" class="btn btn-icon w-20px btn-sm btn-active-color-primary" data-bs-toggle="tooltip" title="Show more search options">
+      <div data-kt-search-element="advanced-options-form-show" class="btn btn-icon w-20px btn-sm btn-active-color-primary" data-bs-toggle="tooltip" title="Mostrar más opciones de búsqueda">
           <app-keenicon name="down" class="fs-2"></app-keenicon>
       </div>
       <!--end::Advanced search toggle-->
@@ -52,7 +52,7 @@
     <div class="scroll-y mh-200px mh-lg-325px">
       <!--begin::Category title-->
       <h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">
-        Users
+        Usuarios
       </h3>
       <!--end::Category title-->
 
@@ -83,7 +83,7 @@
     <div class="scroll-y mh-200px mh-lg-325px">
       <!--begin::Category title-->
       <h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">
-        Recently Searched
+        Búsquedas recientes
       </h3>
       <!--end::Category title-->
 

@@ -98,12 +98,12 @@ export class RoleListingComponent implements OnInit, AfterViewInit, OnDestroy {
 
     const successAlert: SweetAlertOptions = {
       icon: 'success',
-      title: 'Success!',
-      text: this.roleModel.id > 0 ? 'User updated successfully!' : 'User created successfully!',
+      title: '¡Éxito!',
+      text: this.roleModel.id > 0 ? '¡Rol actualizado con éxito!' : '¡Rol creado con éxito!',
     };
     const errorAlert: SweetAlertOptions = {
       icon: 'error',
-      title: 'Error!',
+      title: '¡Error!',
       text: '',
     };
 
@@ -180,7 +180,7 @@ export class RoleListingComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.swalOptions = Object.assign({
       buttonsStyling: false,
-      confirmButtonText: "Ok, got it!",
+      confirmButtonText: "¡Entendido!",
       customClass: {
         confirmButton: "btn btn-" + style
       }
