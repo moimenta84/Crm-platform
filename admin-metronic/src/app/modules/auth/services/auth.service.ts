@@ -38,7 +38,7 @@ export class AuthService implements OnDestroy {
   constructor(
     private authHttpService: AuthHTTPService,
     private router: Router,
-    private HttpClient: HttpClient,
+    private http: HttpClient,
   ) {
     this.isLoadingSubject = new BehaviorSubject<boolean>(false);
     this.currentUserSubject = new BehaviorSubject<UserType>(undefined);
@@ -51,7 +51,7 @@ export class AuthService implements OnDestroy {
   // public methods
   login(email: string, password: string): Observable<UserType> {
     this.isLoadingSubject.next(true);
-    return this.HttpClient.post(`${URL_SERVICIOS}/auth/login`, { email, password }).pipe(
+    return this.http.post(`${URL_SERVICIOS}/auth/login`, { email, password }).pipe(
       map((auth: any) => {
         const result = this.setAuthFromLocalStorage(auth);
         return result;
@@ -74,23 +74,23 @@ export class AuthService implements OnDestroy {
   }
 
   getUserByToken(): Observable<any> {
-    const token = localStorage.getItem('token');
-    if (!token) {
+    const auth = this.getAuthFromLocalStorage();
+    if (!auth) {
       return of(undefined);
     }
-
-    const userStr = localStorage.getItem('user');
-    const user = userStr ? JSON.parse(userStr) : undefined;
-
     this.isLoadingSubject.next(true);
-    return of(user).pipe(
-      map((u: any) => {
-        if (u) {
-          this.currentUserSubject.next(u);
+    return of(auth).pipe(
+      map((user: any) => {
+        if (user) {
+          this.currentUserSubject.next(user);
         } else {
           this.logout();
         }
-        return u;
+        return user;
+      }),
+      catchError((err) => {
+        console.error(err);
+        return of(undefined);
       }),
       finalize(() => this.isLoadingSubject.next(false))
     );
@@ -138,7 +138,7 @@ export class AuthService implements OnDestroy {
       }
       this.token = localStorage.getItem('token');
       this.user = JSON.parse(lsValue);
-      const authData = this.token;
+      const authData = this.user;
       return authData;
     } catch (error) {
       console.error(error);
