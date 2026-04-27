@@ -18,5 +18,6 @@ export class AuthGuard {
       this.authService.logout();
       return false;
     }
+    return true;
   }
 }
