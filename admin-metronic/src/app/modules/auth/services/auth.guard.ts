@@ -3,18 +3,20 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Injectable({ providedIn: 'root' })
-export class AuthGuard  {
+export class AuthGuard {
   constructor(private authService: AuthService) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const currentUser = this.authService.currentUserValue;
-    if (currentUser) {
-      // logged in so return true
-      return true;
+    if (!this.authService.user || !this.authService.token) {
+      this.authService.logout();
+      return false;
     }
-
-    // not logged in so redirect to login page with the return url
-    this.authService.logout();
-    return false;
+    let token = this.authService.token;
+    let expiration = (JSON.parse(atob(token.split('.')[1]))).exp;
+    let now = Math.floor(new Date().getTime() / 1000);
+    if (expiration <= now) {
+      this.authService.logout();
+      return false;
+    }
   }
 }
